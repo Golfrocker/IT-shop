@@ -1,7 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-
+import Shop from "../views/Shop.vue";
+import Detail from "../components/Detail.vue";
+import Cart from "../components/Cart.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -18,6 +20,27 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
+  },
+  {
+    path: "/shop",
+    name: "Shop",
+    component: Shop,
+    children: [
+      {
+        path: "/detail/:id",
+        component: Detail,
+      },
+    ],
+  },
+  {
+    path: "/detail/:id",
+    name: "Detail",
+    component: Detail,
+  },
+  {
+    path: "/cart",
+    name: "Cart",
+    component: Cart,
   },
 ];
 
