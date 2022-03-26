@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Shop from "../views/Shop.vue";
 import Detail from "../components/Detail.vue";
 import Cart from "../components/Cart.vue";
+import Login from "../views/Login.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -41,6 +42,11 @@ const routes = [
     path: "/cart",
     name: "Cart",
     component: Cart,
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login,
   },
 ];
 
